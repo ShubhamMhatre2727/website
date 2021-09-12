@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+{% block body %}
+    <section class="py-5 text-center container">
+          <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+              <h1 class="fw-light">Procedure Catagory</h1>
+              <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+            </div>
+          </div>
+    </section>
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4 mx-0">
+        <div class="col">
+          <div class="card">
+            <img src="https://source.unsplash.com/1600x600/?gym workout" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Gym Workout</h5>
+              <a type="button" class="btn btn-primary" href="/gym_workout">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://source.unsplash.com/1600x600/?workout" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Home Workout</h5>
+              <a type="button" class="btn btn-primary" href="/gym_workout">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="https://source.unsplash.com/1600x600/?yoga" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Yoga</h5>
+              <a type="button" class="btn btn-primary" href="/gym_workout">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+{% endblock body %}

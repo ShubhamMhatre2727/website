@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Gym Workout{% endblock title %} 
+
+{% block slide-1 %}gym{% endblock slide-1 %}
+{% block slide-2 %}fitness{% endblock slide-2 %}
+{% block slide-3 %}bodybuilding{% endblock slide-3 %}
+
+{% block body %}
+<div class="text-center black">
+    <div><span id="player"></span></div>
+</div>
+<div class="album bg-#E4E9F7; my-2">
+  <h1 class="text-center">Gym Workout</h1>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for video in videos %}
+      <div class="col">
+        <div class="card shadow-sm">
+          <img
+            src="{{video.thumbnail.url}}"
+            class="card-img-top"
+            alt="{{video.title}}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{video.title}}</h5>
+            <a class="btn btn-primary" href='#player' onclick="watch('{{video.video.url}}')" >Watch</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- script is added to play video on button click -->
+<script>
+    function watch(url){
+        console.log(url)
+        let player = document.getElementById('player');
+        player.innerHTML = `
+        <div class="alert alert-light alert-dismissible fade show my-0 py-0" role="alert">
+      <video  class="scr"  autoplay >
+            <source src="${url}" type="video/mp4" />
+          </video>
+      <button
+        type="button"
+        class="btn-close py-2"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+        
+            `;
+    }
+</script>
+{% endblock body %}
